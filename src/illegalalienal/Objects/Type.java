@@ -131,38 +131,4 @@ public class Type {
             }
         }
     }
-
-    /*private void initEfficacy()
-    {
-        for(int i = 0; i < typeEfficacyRecords.size(); i++)
-        {
-            CSVRecord currRecord = typeEfficacyRecords.get(i);
-            if(Integer.parseInt(currRecord.get(0)) == id
-                && Integer.parseInt(currRecord.get(2)) != 100)
-            {
-                if(Integer.parseInt(currRecord.get(2)) == 200)
-                    effectiveAgainst.add(Integer.parseInt(currRecord.get(1)));
-
-                else if(Integer.parseInt(currRecord.get(2)) == 50)
-                    notEffectiveAgainst.add(Integer.parseInt(currRecord.get(1)));
-
-                else if(Integer.parseInt(currRecord.get(2)) == 0)
-                    cantHit.add(Integer.parseInt(currRecord.get(1)));
-            }
-            else if(Integer.parseInt(currRecord.get(1)) == id
-                    && Integer.parseInt(currRecord.get(2)) == 100)
-            {
-                if(Integer.parseInt(currRecord.get(2)) == 200)
-                    weakTo.add(Integer.parseInt(currRecord.get(0)));
-
-                else if(Integer.parseInt(currRecord.get(2)) == 50)
-                    resistantTo.add(Integer.parseInt(currRecord.get(0)));
-
-                else if(Integer.parseInt(currRecord.get(0)) == 0)
-                    immuneTo.add(Integer.parseInt(currRecord.get(0)));
-
-
-            }
-        }
-    }*/
 }
