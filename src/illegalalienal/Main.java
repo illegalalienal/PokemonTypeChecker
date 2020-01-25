@@ -31,7 +31,17 @@ public class Main {
 
         Type type = new Type(scan.nextLine());
 
-        System.out.println(type);
+        System.out.println("WEAK TO: " + type.getWeakTo());
+
+        System.out.println("RESISTANT TO: " + type.getResistantTo());
+
+        System.out.println("IMMUNE TO: " + type.getImmuneTo());
+
+        System.out.println("SUPER EFFECTIVE AGAINST: " + type.getEffectiveAgainst());
+
+        System.out.println("NOT VERY EFFECTIVE AGAINST: " + type.getNotEffectiveAgainst());
+
+        System.out.println("CANNOT HIT: " + type.getCantHit());
 
     }
 }
