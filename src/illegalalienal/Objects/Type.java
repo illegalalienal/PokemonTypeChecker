@@ -10,6 +10,7 @@ import static illegalalienal.Constants.*;
 
 public class Type {
     private int id = -1;
+    private String identifier = null;
     private ArrayList<Integer> effectiveAgainst = new ArrayList<>(), notEffectiveAgainst = new ArrayList<>(),
             resistantTo = new ArrayList<>(), weakTo = new ArrayList<>(), cantHit = new ArrayList<>(),
             immuneTo = new ArrayList<>();
@@ -18,6 +19,7 @@ public class Type {
     {
         this.id = id;
         Constants.init();
+        identifier = typeRecords.get(id-1).get(1);
         initEfficacy();
     }
 
@@ -28,6 +30,7 @@ public class Type {
             String typeName = typeRecords.get(i).get(1);
             if (typeName.equals(name)) {
                 id = Integer.parseInt(typeRecords.get(i).get(0));
+                identifier = typeRecords.get(id-1).get(1);
                 break;
             }
         }
