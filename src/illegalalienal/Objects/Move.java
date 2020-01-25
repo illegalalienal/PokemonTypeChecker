@@ -61,10 +61,69 @@ public class Move {
         }
     }
 
+    public Move(String identifier) throws Exception
+    {
+        Constants.init();
+
+        for(int i = 0; i < moveRecords.size(); i++)
+        {
+            if(identifierEquals(moveRecords.get(i).get("identifier"), identifier))
+            {
+                //this.identifier = moveRecords.get(i).get("identifier");
+                this.id = Integer.parseInt(moveRecords.get(i).get("id"));
+                index = i;
+                break;
+            }
+        }
+
+        if(id != -1)
+        {
+            generationID = Integer.parseInt(moveRecords.get(index).get("generation_id"));
+            typeID = Integer.parseInt(moveRecords.get(index).get("type_id"));
+            priority = Integer.parseInt(moveRecords.get(index).get("priority"));
+            targetID = Integer.parseInt(moveRecords.get(index).get("target_id"));
+            damageClassID = Integer.parseInt(moveRecords.get(index).get("damage_class_id"));
+            effectID = Integer.parseInt(moveRecords.get(index).get("effect_id"));
+            this.identifier = moveRecords.get(index).get("identifier");
+
+            try
+            {
+                pp = Integer.parseInt(moveRecords.get(index).get("pp"));
+                power = Integer.parseInt(moveRecords.get(index).get("power"));
+                effectChance = Integer.parseInt(moveRecords.get(index).get("effect_chance"));
+                contestTypeID = Integer.parseInt(moveRecords.get(index).get("contest_type_id"));
+                contestEffectID = Integer.parseInt(moveRecords.get(index).get("contest_effect_id"));
+                superContestEffectID = Integer.parseInt(moveRecords.get(index).get("super_contest_effect_id"));
+
+            }catch(NumberFormatException ignored){}
+        }
+
+
+
+    }
+
     @Override
     public String toString()
     {
         return identifier;
+    }
+
+    private boolean identifierEquals(String a, String b) //a is the identifier, b is the user string
+    {
+        String bFixed = "", aFixed;
+
+        aFixed = a.replace("-", "");
+
+        for(int i = 0; i < b.length(); i++)
+        {
+            if((b.charAt(i) + "").matches("[a-zA-Z0-9]+"))
+            {
+                bFixed += (b.charAt(i) + "");
+            }
+
+        }
+
+        return bFixed.equals(aFixed);
     }
 
 }
