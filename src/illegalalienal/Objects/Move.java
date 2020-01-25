@@ -109,7 +109,7 @@ public class Move {
     }
 
     private boolean identifierEquals(String a, String b) //a is the identifier, b is the user string
-    {
+    {                                                    //TODO: Test for cases that may break identifierEquals
         String bFixed = "", aFixed;
 
         aFixed = a.replace("-", "");
