@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static illegalalienal.Constants.typesParser;
+import static illegalalienal.Constants.typeParser;
 
 public class Main {
 
@@ -25,7 +25,7 @@ public class Main {
 
         ArrayList<String> typeNames = new ArrayList<>();
 
-        List<CSVRecord> typeRecords = typesParser.getRecords();
+        List<CSVRecord> typeRecords = typeParser.getRecords();
 
         Scanner scan = new Scanner(System.in);
 

@@ -15,7 +15,7 @@ public class Constants {
     public static File type_efficacy = new File("src/illegalalienal/CSVs/type_efficacy.csv");
     public static FileReader typeReader;
     public static FileReader typeEfficacyReader;
-    public static CSVParser typesParser;
+    public static CSVParser typeParser;
     public static CSVParser typeEfficacyParser;
     public static List<CSVRecord> typeRecords;
     public static List<CSVRecord> typeEfficacyRecords;
@@ -24,9 +24,9 @@ public class Constants {
     {
         typeReader = new FileReader(types);
         typeEfficacyReader = new FileReader(type_efficacy);
-        typesParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(typeReader);
+        typeParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(typeReader);
         typeEfficacyParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(typeEfficacyReader);
-        typeRecords = typesParser.getRecords();
+        typeRecords = typeParser.getRecords();
         typeEfficacyRecords = typeEfficacyParser.getRecords();
     }
 
