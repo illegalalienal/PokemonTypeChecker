@@ -1,5 +1,7 @@
-package illegalalienal;
+package illegalalienal.Runners;
 
+import illegalalienal.Constants;
+import illegalalienal.Objects.Move;
 import illegalalienal.Objects.Type;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -17,7 +19,7 @@ import java.util.Scanner;
 
 import static illegalalienal.Constants.typeParser;
 
-public class Main {
+public class TypeTest {
 
     public static void main(String[] args) throws Exception {
 
